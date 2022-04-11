@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <fstream>
 #include <cmath>
+#define WEIGHT_LIMIT 80
 using namespace std;
 
 class Planet
@@ -35,7 +36,7 @@ void knapsack(Planet p[], int n, int shipsize)
 	for (int k = 0; k <= n; k++)
 	{
 		cout << "Row " << k + 1 << ":   " << endl;
-		for (int i = 0; i <= 80; i++)
+		for (int i = 0; i <= WEIGHT_LIMIT; i++)
 		{
 			cout << table[k][i] << " ";
 		}
@@ -127,7 +128,7 @@ int main()
 {
 	const int n = 10;
 	Planet p[n];
-	int shipsize = 80;
+	int shipsize = WEIGHT_LIMIT;
 
 	readPlanets(p);
 	displayPlanets(p, n);
